@@ -6,8 +6,8 @@ import { SketchUpload } from '@/components/SketchUpload';
 import { StyleSelector } from '@/components/StyleSelector';
 import { RefinementSlider } from '@/components/RefinementSlider';
 import { ResultsGrid } from '@/components/ResultsGrid';
+import { CharacterShowcase } from '@/components/CharacterShowcase';
 import { useToast } from '@/hooks/use-toast';
-import heroBackground from '@/assets/hero-bg.jpg';
 
 const Index = () => {
   const [uploadedImage, setUploadedImage] = useState<File | null>(null);
@@ -74,25 +74,8 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-background">
-      {/* Hero Section */}
-      <div 
-        className="relative py-20 px-4 text-center overflow-hidden"
-        style={{
-          backgroundImage: `linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url(${heroBackground})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-          backgroundAttachment: 'fixed'
-        }}
-      >
-        <div className="relative z-10 max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 animate-in fade-in-50 duration-700">
-            Sketch to Character
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8 animate-in fade-in-50 duration-700 delay-150">
-            Transform rough sketches into fully rendered characters with AI
-          </p>
-        </div>
-      </div>
+      {/* Character Showcase */}
+      <CharacterShowcase />
 
       {/* Main Content */}
       <div className="max-w-4xl mx-auto px-4 pb-20">
